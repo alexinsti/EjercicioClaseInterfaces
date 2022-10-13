@@ -15,7 +15,7 @@ import java.awt.Component;
 
 
 public class UI extends javax.swing.JFrame {
-    public Color colorActual;
+    public Color colorActual=new Color(255,0,0);
     
 
     /**
@@ -167,18 +167,27 @@ public class UI extends javax.swing.JFrame {
             case "Rojo":
                 colorActual=Color.red;
                 habilitaComponentesColor(false);
+                jSpinnerRojo.setValue(Integer.valueOf("255"));
+                jSpinnerVerde.setValue(Integer.valueOf("0"));
+                jSpinnerAzul.setValue(Integer.valueOf("0"));
                 //Settear rojo a 255
                 break;
             
             case "Verde":
                 colorActual=Color.green;
                 habilitaComponentesColor(false);
+                jSpinnerRojo.setValue(Integer.valueOf("0"));
+                jSpinnerVerde.setValue(Integer.valueOf("255"));
+                jSpinnerAzul.setValue(Integer.valueOf("0"));
                 //Settear rojo a 255
                 break;
             
             case"Azul":
                 colorActual=Color.blue;
                 habilitaComponentesColor(false);
+                jSpinnerRojo.setValue(Integer.valueOf("0"));
+                jSpinnerVerde.setValue(Integer.valueOf("0"));
+                jSpinnerAzul.setValue(Integer.valueOf("255"));
                 //Settear rojo a 255
                 break;
             case "Personalizado":
@@ -247,7 +256,7 @@ public class UI extends javax.swing.JFrame {
     public void personalizaColor(){
         int r=(int)jSpinnerRojo.getValue();
         int g=(int)jSpinnerVerde.getValue();
-        int b=(int)jSpinnerRojo.getValue();
+        int b=(int)jSpinnerAzul.getValue();
         
         colorActual= new Color(r,g,b);
         actualizaColor();
